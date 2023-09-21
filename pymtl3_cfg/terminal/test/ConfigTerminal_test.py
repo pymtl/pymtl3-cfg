@@ -45,7 +45,6 @@ class TestHarness( Component ):
                  num_status_regs=2 ):
     s.src  = StreamSourceFL( PacketType, req_msgs )
     s.sink = StreamSinkFL  ( PacketType, resp_msgs )
-
     s.dut = ConfigTerminal( PacketType, num_config_regs=num_config_regs,
                             num_status_regs=num_status_regs )
 

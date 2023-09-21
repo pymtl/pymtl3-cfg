@@ -20,7 +20,7 @@ class ReqRespRouter( Component ):
   def construct( s, PacketType, IDType, RoutingLogic, num_terminals ):
 
     # Local parameters
-    s.num_terminals = 5
+    s.num_terminals = num_terminals
 
     # Interface
     s.minion_req  = IStreamIfc( PacketType )
@@ -45,7 +45,7 @@ class ReqRespRouter( Component ):
 
     # ID port of the router is not used since we expect there is only one
     # ReqRespRouter in the system.
-    s.req_router.i_id //= 0
+    s.req_router.i_id  //= 0
     s.resp_router.i_id //= 0
 
   def line_trace( s ):
