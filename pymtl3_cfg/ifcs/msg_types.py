@@ -14,8 +14,8 @@ from pymtl3 import *
 #-------------------------------------------------------------------------
 
 class CfgType:
-  WRITE = b2(0)
-  READ  = b2(1)
+  WRITE = 0
+  READ  = 1
 
 #-------------------------------------------------------------------------
 # CfgReq
@@ -47,7 +47,7 @@ class CfgType:
 #   addr  : Bits17
 #   data  : Bits32
 
-def mk_cfg_pkt_type( type_nbits=2, addr_nbits=16, data_nbits=32, 
+def mk_cfg_pkt_type( type_nbits=2, addr_nbits=16, data_nbits=32,
                      prefix='CfgPkt'):
   new_name = f'{prefix}_{type_nbits}_{addr_nbits}_{data_nbits}'
   str_method = lambda s: f'{s.type_}:{s.addr}:{s.data}'
